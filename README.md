@@ -9,8 +9,36 @@
 
 ## About
 
+-   Обрабатывать заявки нужно из панели администратора
+-   После регестрации, пользователю (ответственному лицу) нужно задать роль (role) администратора в БД (const ROLE_ADMIN = 1), что бы зайти в адми-панель
+
+## Endpointы API:
+
 Тип содержимого запроса должен быть application/x-www-form-urlencoded .
 Все текстовые поля должны иметь кодировку Юникод (UTF-8).
+
+Все Endpointы API возвращают статус выполнения (status):
+
+-   ok - успешно, также вернется сообщение о выполнении (message).
+-   fail - не выполнено/произошла ошибка, также вернется массив ошибок (errors).
+
+GET /requests - получение заявок ответственным лицом, с фильтрацией по статусу
+
+-   параметр status - enum(“Active”, “Resolved”) (не обязательный).
+-   возвращает заявки.
+
+PUT /comment-request - ответ на конкретную задачу ответственным лицом
+
+-   параметр id - (integer) (обязательный).
+-   параметр comment - (string) (обязательный).
+-   возвращает статус выполнения.
+
+POST /make-request - отправка заявки пользователями системы
+
+-   параметр name - (string) (обязательный).
+-   параметр email - (string) (обязательный).
+-   параметр message - (string) (обязательный).
+-   возвращает статус выполнения.
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 

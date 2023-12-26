@@ -14,4 +14,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Route::get('/requests', [ApiRequestController::class, 'requests'])->name('api.requests');
 Route::post('/make-request', [ApiRequestController::class, 'makeRequest'])->name('api.make-request');

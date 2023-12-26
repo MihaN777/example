@@ -79,9 +79,7 @@ class AdminRequestService
 			throw ValidationException::withMessages(['error' => 'Ошибка сохранения данных']);
 		}
 
-		// Отправка писма (письмо будет добавленно в очередь)
-		// Нужно заполнить данные доступа к почтовому сервису в .env
-		// После, выполнить команду php artisan queue:work (запуск обработки очередей)
+		// Отправка писма (письма сохраняются в storage\logs -> mailer.log)
 		Mail::to($modelRequest->email)->send(new MessageMail($modelRequest->id, $data['comment']));
 	}
 }

@@ -8,7 +8,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
 // implements ShouldQueue - добавляет отправку письма через очередь
-class MessageMail extends Mailable implements ShouldQueue
+class MessageMail extends Mailable /* implements ShouldQueue */
 {
 	use Queueable, SerializesModels;
 

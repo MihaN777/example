@@ -14,5 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/requests', [ApiRequestController::class, 'requests'])->name('api.requests');
+Route::get('/requests', [ApiRequestController::class, 'requests'])->name('api.requests');
+Route::put('/comment-request', [ApiRequestController::class, 'commentRequest'])->name('api.comment-request');
 Route::post('/make-request', [ApiRequestController::class, 'makeRequest'])->name('api.make-request');

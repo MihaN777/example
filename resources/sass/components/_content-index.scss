@@ -1,0 +1,255 @@
+.main-img {
+    &__bg {
+        width: 100%;
+        height: auto;
+    }
+
+    // =================== Media ===================
+
+    @media (max-width: $--breakpoint-mb-xxl) {
+        &__bg {
+            display: none;
+        }
+    }
+}
+
+.products-title {
+    &__row {
+        @extend .myrow;
+        margin-top: 70px;
+        margin-bottom: 0;
+    }
+
+    &__col {
+        @include make-col();
+    }
+
+    &__text {
+        text-align: center;
+        font-size: 22px;
+        font-weight: 500;
+        color: $--content-font-color;
+        padding: 0;
+        margin: 0;
+    }
+}
+
+.section-products {
+    &__title-row {
+        @extend .myrow;
+        margin-top: 70px;
+        margin-bottom: 38px;
+    }
+
+    &__text-col {
+        @include make-col(6);
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        font-weight: 500;
+        font-size: 17px;
+        color: $--content-font-color;
+
+        & a {
+            transition: all 350ms ease;
+
+            &:hover {
+                color: $--font-color-link;
+            }
+        }
+    }
+
+    &__next-col {
+        @include make-col(6);
+        display: flex;
+        justify-content: end;
+        align-items: center;
+
+        & img {
+            height: 25px;
+            display: flex;
+            align-items: center;
+            transition: all 350ms ease;
+
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.2);
+            }
+        }
+    }
+
+    &__next-link {
+        & img {
+            width: 37px;
+        }
+    }
+
+    &__products-row {
+        @extend .myrow;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__products-col {
+        @include make-col(4);
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__cart {
+        width: 100%;
+    }
+
+    &__cart-img-wrapper {
+        height: 252px;
+        overflow: hidden;
+        border-radius: 10px;
+    }
+
+    &__cart-img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+        transition: all 350ms ease;
+
+        &:hover {
+            filter: brightness(82%);
+        }
+    }
+
+    &__cart-description {
+        font-size: 15px;
+        font-weight: 500;
+        color: $--content-font-color;
+        padding-top: 22px;
+
+        & a {
+            display: inline-block;
+            margin-bottom: 12px;
+            transition: all 350ms ease;
+
+            &:hover {
+                color: $--font-color-link;
+            }
+        }
+
+        & span {
+            font-size: 15px;
+            line-height: 14px;
+            font-weight: 400;
+            color: #888888;
+        }
+    }
+
+    // =================== Media ===================
+
+    @include media-breakpoint-down(tab-xxl) {
+        &__products-col {
+            @include make-col(12);
+        }
+
+        &__cart {
+            padding-bottom: 40px;
+        }
+
+        &__cart-description {
+            padding-top: 7px;
+        }
+    }
+}
+
+.catalog-link {
+    &__row {
+        @extend .myrow;
+        margin-bottom: 70px;
+        margin-top: 70px;
+    }
+
+    &__col {
+        @include make-col();
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__btn {
+        border: none;
+        border-radius: 20px 20px 20px 20px;
+        width: 198px;
+        height: 42px;
+        background-color: $--content-btn-color;
+        font-size: 14px;
+        font-weight: 400;
+        color: $--menu-text-color;
+        transition: all 350ms ease;
+        outline: 0 solid transparent;
+
+        &:hover {
+            cursor: pointer;
+            background-color: $--content-btn-hover-color;
+        }
+    }
+}
+
+.company-info {
+    &__row {
+        @extend .myrow;
+        margin-bottom: 100px;
+    }
+
+    &__text-col {
+        @include make-col(6);
+    }
+
+    &__img-col {
+        @include make-col(6);
+
+        & img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+    }
+
+    &__text {
+        & h2 {
+            font-size: 22px;
+            font-weight: 500;
+            color: $--content-font-color;
+            margin-bottom: 50px;
+        }
+    }
+
+    &__text-paragraph {
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+
+        & p {
+            font-size: 15px;
+            line-height: 22px;
+            font-weight: 400;
+            color: $--content-font-color;
+        }
+    }
+
+    // =================== Media ===================
+
+    @include media-breakpoint-down(tab-xl) {
+        &__text-col {
+            @include make-col(12);
+            order: 2;
+        }
+
+        &__img-col {
+            @include make-col(12);
+            margin-top: 30px;
+            margin-bottom: 30px;
+            order: 1;
+        }
+    }
+}
